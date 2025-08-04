@@ -23,14 +23,15 @@ public class DynamicDropDown {
 		driver.findElement(By.id("ctl00_mainContent_ddl_destinationStation1_CTXT")).click();
 		driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click();
 		
+		// HANDLING CALENDAR
+		driver.findElement(By.cssSelector(".ui-state-default.ui-state-active")).click();
+		
 		// //a[@value='BLR']
-
-		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='MAA']")).click(); //INSTEAD OF INDEXING WE USED PARENT-SIBLING CONCEPT WHERE FROM PARENT CLASS WE COME TO CHID CLASS AND MAPPED WITH ID
-		driver.findElement(By.cssSelector(".ui-state-default.ui-state-highlight.ui-state-active")).click();
 
 	}
 
 }
+
 /*
 WE WILL CREATE THE XPATH AND AUTOMATE THE DROPDOWNS..IN THIS WE WILL SEE THAT WHEN WE CREATE MAA XPATH IT WILL SHOW IN 2 ELEMENTS BUT WE WANT ONLY 1 ,2ND ONE WILL BE FROM WILL BE TO PART
 BUT WE WILL USE INDEXING TO SELECT THE 2ND ONE ON TO
