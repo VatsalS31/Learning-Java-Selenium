@@ -25,6 +25,9 @@ public class DynamicDropDown {
 		
 		// //a[@value='BLR']
 
+		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='MAA']")).click(); //INSTEAD OF INDEXING WE USED PARENT-SIBLING CONCEPT WHERE FROM PARENT CLASS WE COME TO CHID CLASS AND MAPPED WITH ID
+		driver.findElement(By.cssSelector(".ui-state-default.ui-state-highlight.ui-state-active")).click();
+
 	}
 
 }
