@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,6 +21,7 @@ public class ActionsDemo {
 		System.setProperty("webdriver.chrome.driver", "/Users/vatsalshah/Downloads/cdriver/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.amazon.com/");
+		driver.manage().window().maximize();
 
 		// Add wait to allow dynamic content to load
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -28,7 +30,10 @@ public class ActionsDemo {
 		WebElement accountList = driver.findElement(By.id("nav-link-accountList"));
 
 		Actions a = new Actions(driver);
-		a.moveToElement(accountList).build().perform();
+		//text box will be filled in caps
+		a.moveToElement(driver.findElement(By.id("twotabsearchtextbox"))).click().keyDown(Keys.SHIFT).sendKeys("hello").doubleClick().perform();
+		//move to specific element
+		a.moveToElement(accountList).contextClick().perform();
 
 
 	}
